@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+   >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/car_has_come"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/text_size13" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="车主已等待15秒"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size13" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="@dimen/width228"
+            android:layout_height="@dimen/width60"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/brand_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="苏E 12345"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size36" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="宝马X6"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size14" />
+
+        <TextView
+            android:id="@+id/distant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:text="我的目的站点:月亮湾"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size17" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:text="不是这辆车？"
+            android:textColor="@color/bg_color"
+            android:textSize="@dimen/text_size17" />
+
+        <View
+            style="@style/line"
+            android:layout_marginTop="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp">
+
+            <com.zt.station.util.CircleImageView
+                android:id="@+id/pass_get_car_head"
+                android:layout_width="@dimen/width40"
+                android:layout_height="@dimen/width40"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/pass_get_car_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/pass_get_car_head"
+                android:layout_toRightOf="@+id/pass_get_car_head"
+                android:text="某某某"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size14" />
+
+            <TextView
+                android:id="@+id/pass_get_car_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_alignLeft="@+id/pass_get_car_username"
+                android:layout_alignStart="@+id/pass_get_car_username"
+                android:layout_below="@+id/pass_get_car_username"
+                android:text="微软"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_size14" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/red"
+                android:padding="5dp"
+                android:text="已进站"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size13" />
+
+        </RelativeLayout>
+
+        <View style="@style/line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/gas_pay"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="4.00元"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size17" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/has_get_the_car"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbar_height"
+            android:layout_margin="20dp"
+            android:background="@color/bg_color"
+            android:gravity="center"
+            android:text="@string/to_pay"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size17" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/gaode_map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width40"
+        android:layout_margin="10dp"
+        android:background="@drawable/white_corner_normal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/width13"
+            android:layout_height="@dimen/width13"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/search" />
+
+        <EditText
+            android:id="@+id/product_search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="查找地点、公交、地铁"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="5dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/text_size15"
+            tools:ignore="MissingPrefix,RtlHardcoded,RtlSymmetry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width40"
+        android:layout_gravity="bottom"
+        android:layout_margin="10dp"
+        android:background="@drawable/white_corner_normal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/near"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="附近"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/route"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="路线"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/myinfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</FrameLayout>

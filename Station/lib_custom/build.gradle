@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"http://111.231.113.89/\"")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            buildConfigField("String", "BASE_URL", "\"http://111.231.113.89/\"")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile rootProject.ext.dependencies.libRetrofit
+    compile rootProject.ext.dependencies.libRetrofitAdapterRxJava
+    compile rootProject.ext.dependencies.libRetrofitConverterGson
+
+    compile rootProject.ext.dependencies.libOkHttp
+    compile rootProject.ext.dependencies.libOkHttpLoggingInterceptor
+    compile rootProject.ext.dependencies.libGson
+    compile rootProject.ext.dependencies.libKLog
+    compile rootProject.ext.dependencies.libButterKnife
+    compile rootProject.ext.dependencies.libEventBus
+    compile rootProject.ext.dependencies.libFlycoSystemBar
+    compile rootProject.ext.dependencies.libRxJava
+    compile rootProject.ext.dependencies.libRxAndroid
+    compile rootProject.ext.dependencies.libAppCompatV7
+    compile 'com.google.android:multidex:0.1'
+}

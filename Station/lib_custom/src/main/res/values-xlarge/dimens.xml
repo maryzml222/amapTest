@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actionbar_height">88dp</dimen>
+    <dimen name="width20">40dp</dimen>
+    <dimen name="text_size17">34sp</dimen>
+</resources>

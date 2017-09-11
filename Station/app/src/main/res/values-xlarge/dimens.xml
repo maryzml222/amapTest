@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actionbar_height">88dp</dimen>
+    <dimen name="width6">12dp</dimen>
+    <dimen name="width22">44dp</dimen>
+    <dimen name="width16">32dp</dimen>
+    <dimen name="width17">34dp</dimen>
+    <dimen name="width30">60dp</dimen>
+    <dimen name="width48">96dp</dimen>
+    <dimen name="width24">48dp</dimen>
+    <dimen name="width13">26dp</dimen>
+    <dimen name="width20">40dp</dimen>
+    <dimen name="width120">240dp</dimen>
+    <dimen name="width101">202dp</dimen>
+    <dimen name="width23">46dp</dimen>
+    <dimen name="width18">36dp</dimen>
+    <dimen name="width40">80dp</dimen>
+    <dimen name="width60">120dp</dimen>
+    <dimen name="width69">138dp</dimen>
+    <dimen name="width88">176dp</dimen>
+    <dimen name="width228">456dp</dimen>
+    <dimen name="width104">208dp</dimen>
+    <dimen name="width98">196dp</dimen>
+    <dimen name="width28">56dp</dimen>
+    <dimen name="width129">258dp</dimen>
+    <dimen name="width10">20dp</dimen>
+    <dimen name="width400">800dp</dimen>
+    <dimen name="text_size10">20sp</dimen>
+    <dimen name="text_size13">26sp</dimen>
+    <dimen name="text_size14">28sp</dimen>
+    <dimen name="text_size15">30sp</dimen>
+    <dimen name="text_size16">32sp</dimen>
+    <dimen name="text_size17">34sp</dimen>
+    <dimen name="text_size36">72sp</dimen>
+</resources>

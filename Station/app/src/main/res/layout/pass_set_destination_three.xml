@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/width129"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.35"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="@dimen/width13"
+            android:layout_height="@dimen/width16"
+            android:layout_gravity="center"
+            android:background="@drawable/bus_stop_brand_s" />
+
+        <TextView
+            android:id="@+id/set_location_start_stop"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:gravity="center"
+            android:text="南施街创意产业园创意产业园"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size14" />
+
+        <View
+            android:layout_width="@dimen/width20"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/grey_four" />
+
+        <ImageView
+            android:layout_width="@dimen/width13"
+            android:layout_height="@dimen/width16"
+            android:layout_gravity="center"
+            android:background="@drawable/bus_stop_brand" />
+
+        <TextView
+            android:id="@+id/set_location_end_stop"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="创意产业园创意产业园"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.2"
+
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/set_location_bus_line"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="12路 123路 139路"
+            android:gravity="center|left"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size10" />
+
+
+        <TextView
+            android:id="@+id/set_location_kilometre"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="2.4公里"
+            android:gravity="center|right"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size14" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.6"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:weightSum="1">
+
+        <CheckBox
+            android:id="@+id/set_location_confirm_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/agreement"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size13" />
+
+        <Button
+            android:id="@+id/set_location_publish_tip"
+            android:layout_width="@dimen/width120"
+            android:layout_height="@dimen/actionbar_height"
+            android:background="@color/bg_color"
+            android:text="发布行程"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size17" />
+    </LinearLayout>
+
+
+</LinearLayout>
