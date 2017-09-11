@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">My Library</string>
-    <string name="exception_network_error">Network Error</string>
-    <string name="exception_unknow_error">Unknow Error</string>
-    <string name="cancel">取消</string>
-</resources>
