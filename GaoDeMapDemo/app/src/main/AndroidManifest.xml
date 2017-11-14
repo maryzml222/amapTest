@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gaodemapdemo">
+
+    <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Light">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="3cdec9ec880967d0511ff72fb673d220" />
+
+        <activity
+            android:name=".basic.BasicMapActivity"
+            android:label="@string/basic_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.TextureMapViewActivity"
+            android:label="@string/basic_texturemapview"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.ViewPagerWithMapActivity"
+            android:label="@string/viewpager_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.BaseMapSupportFragmentActivity"
+            android:label="@string/basic_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.map.BaseMapFragmentActivity"
+            android:label="@string/basic_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.map.MapImpMethodActivity"
+            android:label="@string/basic_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.map.BaseTextureMapFragmentActivity"
+            android:label="@string/basic_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.map.BaseTextureSupportMapFragmentActivity"
+            android:label="@string/basic_map"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.Animate_CameraActivity"
+            android:label="@string/camera_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.HeatMapActivity"
+            android:label="@string/heatmap_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.EventsActivity"
+            android:label="@string/events_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.LayersActivity"
+            android:label="@string/layers_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.PoiClickActivity"
+            android:label="@string/poiclick_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.MapOptionActivity"
+            android:label="@string/mapOption_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.ScreenShotActivity"
+            android:label="@string/screenshot_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.MinMaxZoomLevelActivity"
+            android:label="@string/set_min_max_zoomlevel"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.LimitBoundsActivity"
+            android:label="@string/limit_bounds"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".opengl.OpenglActivity"
+            android:label="@string/opengl_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.UiSettingsActivity"
+            android:label="@string/uisettings_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.MarkerActivity"
+            android:label="@string/marker_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.MarkerAnimationActivity"
+            android:label="@string/marker_animation_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.PolylineActivity"
+            android:label="@string/polyline_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.ArcActivity"
+            android:label="@string/arc_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.GroundOverlayActivity"
+            android:label="@string/groundoverlay_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.PolygonActivity"
+            android:label="@string/polygon_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.CircleActivity"
+            android:label="@string/circle_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.NavigateArrowOverlayActivity"
+            android:label="@string/navigatearrow_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.MultiPointOverlayActivity"
+            android:label="@string/multipoint_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".location.LocationModeSourceActivity_Old"
+            android:label="@string/locationmodesource_demo_old"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".location.LocationModeSourceActivity"
+            android:label="@string/locationmodesource_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".geocoder.GeocoderActivity"
+            android:label="@string/geocoder_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.RouteActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".busline.BuslineActivity"
+            android:label="@string/busline_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".poisearch.PoiKeywordSearchActivity"
+            android:label="@string/poikeywordsearch_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".poisearch.PoiAroundSearchActivity"
+            android:label="@string/poiaroundsearch_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".poisearch.PoiIDSearchActivity"
+            android:label="@string/poiidsearch_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".offlinemap.OfflineMapActivity"
+            android:label="@string/offlinemap_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".district.DistrictActivity"
+            android:label="@string/district_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".district.DistrictWithBoundaryActivity"
+            android:label="@string/district_boundary_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cloud.CloudActivity"
+            android:label="@string/cloud_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cloud.CloudDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cloud.PreviewPhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".share.ShareActivity"
+            android:label="@string/share_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".weather.WeatherSearchActivity"
+            android:label="@string/weather_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".poisearch.SubPoiSearchActivity"
+            android:label="@string/subpoi_demo"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".route.DriveRouteDetailActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.WalkRouteDetailActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.BusRouteDetailActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".indoor.IndoorMapActivity"
+            android:label="@string/indoormap_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.TwoMapActivity"
+            android:label="@string/multi_inst"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.LogoSettingsActivity"
+            android:label="@string/logo_position"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.GestureSettingsActivity"
+            android:label="@string/gesture"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".inputtip.InputtipsActivity"
+            android:label="@string/inputtips_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.GeodesicActivity"
+            android:label="@string/inputtips_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.ColourfulPolylineActivity"
+            android:label="@string/colourline_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".geocoder.ReGeocoderActivity"
+            android:label="@string/regeocoder_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.CameraActivity"
+            android:label="@string/animate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".basic.ZoomActivity"
+            android:label="@string/map_zoom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.CustomMarkerActivity"
+            android:label="@string/custommarker_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.MarkerClickActivity"
+            android:label="@string/marker_click"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.DriveRouteActivity"
+            android:label="@string/route_drive"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.BusRouteActivity"
+            android:label="@string/route_bus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.WalkRouteActivity"
+            android:label="@string/route_walk"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".busline.BusStationActivity"
+            android:label="@string/busstation_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".location.CustomLocationActivity"
+            android:label="@string/customlocation_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.InfoWindowActivity"
+            android:label="@string/infowindow_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".overlay.TileOverlayActivity"
+            android:label="@string/tileoverlay_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tools.CoordConverActivity"
+            android:label="@string/coordconvert_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tools.ContainsActivity"
+            android:label="@string/contains_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tools.CalculateDistanceActivity"
+            android:label="@string/calculateLineDistance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tools.GeoToScreenActivity"
+            android:label="@string/convertgeo2point_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".trace.TraceActivity"
+            android:label="@string/trace_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".trace.TraceActivity_Simple"
+            android:label="@string/trace_demo_simple"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routepoi.RoutePOIActivity"
+            android:label="@string/routepoisearch_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.RideRouteActivity"
+            android:label="@string/route_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".route.RideRouteDetailActivity"
+            android:label="@string/route_ride"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smooth.SmoothMoveActivity"
+            android:label="@string/smooth_move_demo"
+            android:screenOrientation="portrait" />
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".MainNewActivity"
+            android:screenOrientation="portrait" ></activity>
+
+        <activity
+            android:name="com.example.gaodemapdemo.activity.IndexActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.amap.api.navi.AmapRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.BasicNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.custom.ComponentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomZoomInIntersectionViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomDriveWayViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.HudDisplayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.IntelligentBroadcastActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.RoutePlanningActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.GPSNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomTrafficBarViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomTrafficProgressBarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.SimpleNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.GetNaviStepsAndLinksActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.NorthModeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.OverviewModeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.BasicWalkNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.UseExtraGpsDataActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomCarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomRouteTextureInAMapNaviViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomDirectionViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomTrafficButtonViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomNextTurnTipViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomZoomButtonViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.CustomOverviewButtonViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.RestRouteShowActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.RouteNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.SingleRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.WalkRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.RideRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.EmulatorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.custom.CustomUiActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.example.gaodemapdemo.activity.DriverListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <activity android:name="com.example.gaodemapdemo.activity.search.SearchPoiActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.example.gaodemapdemo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            storeFile file(DEBUG_STORE_FILE)
+            storePassword DEBUG_STORE_PASSWORD
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+        }
+
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        // debug
+        debug {
+            //混淆
+            minifyEnabled false
+            //ZipAlign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            // 混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 签名配置
+            signingConfig signingConfigs.debug
+        }
+
+        // release
+        release {
+            //混淆
+            minifyEnabled false
+            //ZipAlign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            // 混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 签名配置
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            aidl.srcDirs = ['src/main/java']
+        }
+    }
+    packagingOptions {
+       /* exclude 'assets/ap1.data'
+        exclude 'assets/map_assets/VM3DRes/roadbk_main.png'
+        exclude 'assets/map_assets/VM3DRes/cross_bg.png'
+        exclude 'assets/marker_gps_no_sharing.png'
+        exclude 'assets/map_assets/3dlandscape.xml'
+        exclude 'assets/map_assets/roadarrow.data'
+        exclude 'assets/map_assets/VM3DRes/d_yellow_night.png'
+        exclude 'assets/map_assets/tyl.data'
+        exclude 'assets/map_assets/VM3DRes/d_yellow.png'
+        exclude 'assets/ap.data'
+        exclude 'assets/location_pressed.png'
+        exclude 'assets/map_assets/VM3DRes/road_bottom_day.png'
+        exclude 'assets/map_assets/tyl_l.data'
+        exclude 'assets/map_assets/3dportrait.xml'
+        exclude 'assets/amap_sdk_shaders/point.glsl'
+        exclude 'assets/map_assets/VM3DRes/d_yellow_day.png'
+        exclude 'assets/amap_sdk_shaders/texture_normal.glsl'
+        exclude 'assets/hud.png'
+        exclude 'assets/AZURE.png'
+        exclude 'assets/map_assets/search_scenic_icon.data'
+        exclude 'assets/GREEN.png'
+        exclude 'assets/infowindow_bg.9.png'
+        exclude 'assets/RED.png'
+        exclude 'assets/ROSE.png'
+        exclude 'assets/tracelinetexture.png'
+        exclude 'assets/VIOLET.png'
+        exclude 'assets/YELLOW.png'
+        exclude 'assets/zoomin_pressed.png'
+        exclude 'assets/zoomin_selected.png'
+        exclude 'assets/zoomin_unselected.png'
+        exclude 'assets/zoomout_pressed.png'
+        exclude 'assets/zoomout_selected.png'
+        exclude 'assets/zoomout_unselected.png'
+        exclude 'assets/map_assets/style_12_10_1467006104.data'
+        exclude 'assets/map_assets/4001_1444880323.data'*/
+
+
+
+
+
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/Volley.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/AMap3DMap_5.4.0_AMapNavi_5.4.0_20170929.jar')
+}
