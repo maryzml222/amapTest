@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gaodemapdemo">
 
     <!-- 允许程序打开网络套接字 -->
@@ -14,20 +15,41 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 银联需要的权限 -->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <!-- 添加必要的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 短信验证登陆功能需要添加次权限来自动填充验证码，用不到可以去掉 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Light">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        android:theme="@style/MyAppTheme">
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -200,7 +222,7 @@
             android:name=".cloud.PreviewPhotoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".share.ShareActivity"
+            android:name=".activity.ShareActivity"
             android:label="@string/share_demo"
             android:screenOrientation="portrait" />
         <activity
@@ -344,185 +366,464 @@
         <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".MainNewActivity"
-            android:screenOrientation="portrait" ></activity>
-
         <activity
-            android:name="com.example.gaodemapdemo.activity.IndexActivity"
+            android:name=".activity.RunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.IndexActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.amap.api.navi.AmapRouteActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.BasicNaviActivity"
+            android:name=".activity.BasicNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.custom.ComponentActivity"
+            android:name=".activity.custom.ComponentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomZoomInIntersectionViewActivity"
+            android:name=".activity.CustomZoomInIntersectionViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomRouteActivity"
+            android:name=".activity.CustomRouteActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomDriveWayViewActivity"
+            android:name=".activity.CustomDriveWayViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.HudDisplayActivity"
+            android:name=".activity.HudDisplayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.IntelligentBroadcastActivity"
+            android:name=".activity.IntelligentBroadcastActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.RoutePlanningActivity"
+            android:name=".activity.RoutePlanningActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.GPSNaviActivity"
+            android:name=".activity.GPSNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomTrafficBarViewActivity"
+            android:name=".activity.CustomTrafficBarViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomTrafficProgressBarActivity"
+            android:name=".activity.CustomTrafficProgressBarActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.SimpleNaviActivity"
+            android:name=".activity.SimpleNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.GetNaviStepsAndLinksActivity"
+            android:name=".activity.GetNaviStepsAndLinksActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.NorthModeActivity"
+            android:name=".activity.NorthModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.OverviewModeActivity"
+            android:name=".activity.OverviewModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.BasicWalkNaviActivity"
+            android:name=".activity.BasicWalkNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.UseExtraGpsDataActivity"
+            android:name=".activity.UseExtraGpsDataActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomCarActivity"
+            android:name=".activity.CustomCarActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomRouteTextureInAMapNaviViewActivity"
+            android:name=".activity.CustomRouteTextureInAMapNaviViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomDirectionViewActivity"
+            android:name=".activity.CustomDirectionViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomTrafficButtonViewActivity"
+            android:name=".activity.CustomTrafficButtonViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomNextTurnTipViewActivity"
+            android:name=".activity.CustomNextTurnTipViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomZoomButtonViewActivity"
+            android:name=".activity.CustomZoomButtonViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.CustomOverviewButtonViewActivity"
+            android:name=".activity.CustomOverviewButtonViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.RestRouteShowActivity"
+            android:name=".activity.RestRouteShowActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.RouteNaviActivity"
+            android:name=".activity.RouteNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.SingleRouteCalculateActivity"
+            android:name=".activity.SingleRouteCalculateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.WalkRouteCalculateActivity"
+            android:name=".activity.WalkRouteCalculateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.RideRouteCalculateActivity"
+            android:name=".activity.RideRouteCalculateActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.EmulatorActivity"
+            android:name=".activity.EmulatorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.custom.CustomUiActivity"
+            android:name=".activity.custom.CustomUiActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.example.gaodemapdemo.activity.DriverListActivity"
+            android:name=".activity.DriverListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity android:name=".activity.search.SearchPoiActivity" />
+        <activity android:name=".AmapSearchActivity" />
 
-        <activity android:name="com.example.gaodemapdemo.activity.search.SearchPoiActivity" />
+        <!-- Ping++ SDK -->
+        <activity
+            android:name="com.pingplusplus.android.PaymentActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+
+            <!-- 不使用QQ钱包,可删除此部分代码 -->
+            <!-- scheme 填写规则建议：qwallet + QQ钱包中的app_id -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="qwalletXXXXXXXX" />
+            </intent-filter>
+        </activity> <!-- 微信支付 -->
+        <!-- 1.需要将以下"替换成自己 APK 的包名"换成在微信平台上注册填写的包名 -->
+        <!-- 2.WxPayEntryActivity 这个类在 SDK 内部实现，开发者不需要额外实现该类 -->
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.pingplusplus.android.PaymentActivity" />
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind" />
+
+        <!-- 银联支付 -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize" />
+
+        <!-- 招行一网通（非混淆加密方式） -->
+        <!-- 招行一网通在非混淆加密方式下同时需要配置 cmbkb_publickey字段，详见本页面最下方"注意事项" -->
+        <service
+            android:name="cmb.pb.cmbsafe.CmbService"
+            android:exported="false" />
+
+        <activity
+            android:name="cmb.pb.ui.PBKeyboardActivity"
+            android:theme="@style/CmbDialogStyleBottom" />
+        <activity android:name=".pingPay.PingPayActivity" />
+        <activity android:name=".pingPay.ClientSDKActivity" />
+        <activity android:name=".pingPay.OneSDKActivity" />
+        <activity android:name=".mobShare.MobShareActivity" />
+        <activity android:name=".aidlDemo.MaryAidlActivity" />
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".aidlDemo.AdditionService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.gaodemapdemo.aidlDemo.IMyAidlInterface" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".zxing.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Allow web apps to launch Barcode Scanner by linking to http://zxing.appspot.com/scan. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="zxing.appspot.com"
+                    android:path="/scan"
+                    android:scheme="http" />
+            </intent-filter>
+            <!-- We also support a Google Product Search URL. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.google.com"
+                    android:path="/m/products/scan"
+                    android:scheme="http" />
+            </intent-filter>
+            <!-- And the UK version. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.google.co.uk"
+                    android:path="/m/products/scan"
+                    android:scheme="http" />
+            </intent-filter>
+            <!-- Support zxing://scan/?... like iPhone app -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="scan"
+                    android:path="/"
+                    android:scheme="zxing" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zxing.PreferencesActivity"
+            android:label="@string/preferences_name"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name=".zxing.encode.EncodeActivity"
+            android:stateNotNeeded="true">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.ENCODE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- This allows us to handle the Share button in Contacts. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/x-vcard" />
+            </intent-filter>
+            <!-- This allows us to handle sharing any plain text . -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zxing.book.SearchBookContentsActivity"
+            android:label="@string/sbc_name"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zxing.share.ShareActivity"
+            android:screenOrientation="user"
+            android:stateNotNeeded="true">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SHARE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zxing.history.HistoryActivity"
+            android:label="@string/history_title"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name=".zxing.share.BookmarkPickerActivity"
+            android:label="@string/bookmark_picker_name"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name=".zxing.share.AppPickerActivity"
+            android:label="@string/app_picker_name"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name=".zxing.HelpActivity"
+            android:label="@string/menu_help"
+            android:screenOrientation="user"
+            android:stateNotNeeded="true" />
+
+        <!-- ShareSDK的activity -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!-- ShareSDK3.1.0版本之前才需要在MobUIShell下面注册此意图，3.1.0版本之后（包含3.1.0）不需要注册此intent -->
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 集成line客户端登录授权，需要添如下格式的过滤器 -->
+            <intent-filter>
+                <data android:scheme="line.1477692153" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--
+        （3.1.0版本之后（包含3.1.0）才需要注册此Activity）如果集成QQ分享，
+        或者使用QQ客户端来进行QQ空间的分享，须要在此处添加一个回调activity，对ACTION_VIEW事件的过滤器，
+        其中的scheme是“tencent”前缀再开发者应用的加上appId。
+        如果此Activity和过滤器不设置，则分享结束以后不能得到正确的回调。
+        -->
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100371282" />
+            </intent-filter>
+        </activity>
+        <!--
+        如果您的项目集微信或者微信朋友圈，请查看AndroidManifest.xml配置文件里的package路径,需要在package目录下创建wxapi目录再放置WXEntryActivity。
+        没有此activity在微信分享后回调会检查是否有此activity,没有将会报错。
+        -->
+        <activity
+            android:name=".mobShare.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 而如果您的项目集易信的两个平台，请查看AndroidManifest.xml配置文件里的package路径需要在package目录下创建yxapi目录在放置回调Activity： -->
+        <activity
+            android:name=".mobShare.yxapi.YXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="1155ffcf0b9d3" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="125e7387fafdf2c5e4d5f8441133dc8a" />
+
+        <activity android:name=".mobShare.DDShareActivity" />
+        <activity android:name=".html.HtmlActivity" />
+        <activity android:name=".animate.AnimateActivity"></activity>
     </application>
 
 </manifest>

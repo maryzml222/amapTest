@@ -33,7 +33,7 @@ import com.amap.api.services.route.RouteSearch.RideRouteQuery;
 import com.amap.api.services.route.WalkRouteResult;
 import com.example.gaodemapdemo.R;
 
-import overlay.RideRouteOverlay;
+import com.example.gaodemapdemo.overlay.RideRouteOverlay;
 
 /**
  * 骑行路径规划功能的实现

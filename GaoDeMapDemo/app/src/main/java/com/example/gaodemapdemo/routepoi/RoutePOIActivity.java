@@ -43,7 +43,7 @@ import com.example.gaodemapdemo.util.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import overlay.DrivingRouteOverlay;
+import com.example.gaodemapdemo.overlay.DrivingRouteOverlay;
 
 /**
  * 沿途搜索 示例

@@ -39,8 +39,8 @@ import com.amap.api.services.route.WalkPath;
 import com.amap.api.services.route.WalkRouteResult;
 import com.example.gaodemapdemo.R;
 
-import overlay.DrivingRouteOverlay;
-import overlay.WalkRouteOverlay;
+import com.example.gaodemapdemo.overlay.DrivingRouteOverlay;
+import com.example.gaodemapdemo.overlay.WalkRouteOverlay;
 
 /**
  * Route路径规划: 驾车规划、公交规划、步行规划

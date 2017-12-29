@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mobShare.MobShareActivity">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ff44aacc"
+        android:gravity="center"
+        android:text="width:80%,height:15%"
+        android:textColor="#ffffff"
+        app:layout_marginTopPercent="5%"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="70%" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:text="width:80%,height:15%"
+        android:textColor="#ffffff"
+        app:layout_heightPercent="5%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginRightPercent="5%"
+        app:layout_widthPercent="100%" />
+</android.support.percent.PercentRelativeLayout>

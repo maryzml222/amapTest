@@ -21,8 +21,7 @@ import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusRouteResult;
 import com.example.gaodemapdemo.R;
 import com.example.gaodemapdemo.util.AMapUtil;
-import com.example.gaodemapdemo.util.ToastUtil;
-import overlay.BusRouteOverlay;
+import com.example.gaodemapdemo.overlay.BusRouteOverlay;
 
 public class BusRouteDetailActivity extends Activity implements OnMapLoadedListener,
         OnMapClickListener, InfoWindowAdapter, OnInfoWindowClickListener, OnMarkerClickListener {

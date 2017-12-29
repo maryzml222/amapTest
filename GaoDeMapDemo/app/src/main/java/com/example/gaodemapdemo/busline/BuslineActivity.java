@@ -33,7 +33,7 @@ import com.example.gaodemapdemo.util.ToastUtil;
 
 import java.util.List;
 
-import overlay.BusLineOverlay;
+import com.example.gaodemapdemo.overlay.BusLineOverlay;
 
 /**
  * AMapV2地图中简单介绍公交线路搜索

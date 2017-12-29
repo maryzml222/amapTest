@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>知店APP</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <style type='text/css'>
+		h1 { color:steelblue; font-size:24px; margin-top:24px; }
+
+
+    </style>
+
+    <script>
+<!--// Android需要调用的方法-->
+   function callJS(msg){
+      alert(msg+"测试 Android调用了JS的callJS方法");
+   }
+
+   function callAndroid(){
+        // 由于对象映射，所以调用test对象等于调用Android映射的对象
+            android.hello("js调用了android中的hello方法");
+         }
+   function callAndroidByUrl(){
+        // 由于对象映射，所以调用test对象等于调用Android映射的对象
+           document.location = "js://webview?arg1=111&arg2=222";
+         }
+   function callAndroidByDialog(){
+       // 调用prompt（）
+    var result=prompt("js://webview?arg1=111&arg2=222");
+    alert("demo " + result);
+         }
+
+    </script>
+</head>
+
+<body style="padding:10px">
+
+
+<!--<div id='buttons'></div>-->
+<!--<div id='log'></div>-->
+
+<!--//点击按钮则调用callAndroid函数-->
+<button type="button" id="button1" onclick="callAndroid()"
+        style="height: 100px;width: auto;font-size: 30px">点击调用Android代码
+</button>
+
+<button type="button" id="button2" onclick="callAndroidByUrl()"
+        style="height: 100px;width: auto;font-size: 30px">点击调用Android代码，拦截URL
+</button>
+
+<button type="button" id="button3" onclick="callAndroidByDialog()"
+        style="height: 100px;width: auto;font-size: 30px">点击调用Android代码，拦截JS对话框
+</button>
+</body>
+</html>

@@ -33,7 +33,7 @@ import com.amap.api.services.route.WalkPath;
 import com.amap.api.services.route.WalkRouteResult;
 import com.example.gaodemapdemo.R;
 
-import overlay.WalkRouteOverlay;
+import com.example.gaodemapdemo.overlay.WalkRouteOverlay;
 
 /**
  * 步行路径规划 示例

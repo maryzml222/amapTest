@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.1"
@@ -64,47 +64,15 @@ android {
         }
     }
     packagingOptions {
-       /* exclude 'assets/ap1.data'
-        exclude 'assets/map_assets/VM3DRes/roadbk_main.png'
-        exclude 'assets/map_assets/VM3DRes/cross_bg.png'
-        exclude 'assets/marker_gps_no_sharing.png'
-        exclude 'assets/map_assets/3dlandscape.xml'
-        exclude 'assets/map_assets/roadarrow.data'
-        exclude 'assets/map_assets/VM3DRes/d_yellow_night.png'
-        exclude 'assets/map_assets/tyl.data'
-        exclude 'assets/map_assets/VM3DRes/d_yellow.png'
-        exclude 'assets/ap.data'
-        exclude 'assets/location_pressed.png'
-        exclude 'assets/map_assets/VM3DRes/road_bottom_day.png'
-        exclude 'assets/map_assets/tyl_l.data'
-        exclude 'assets/map_assets/3dportrait.xml'
-        exclude 'assets/amap_sdk_shaders/point.glsl'
-        exclude 'assets/map_assets/VM3DRes/d_yellow_day.png'
-        exclude 'assets/amap_sdk_shaders/texture_normal.glsl'
-        exclude 'assets/hud.png'
-        exclude 'assets/AZURE.png'
-        exclude 'assets/map_assets/search_scenic_icon.data'
-        exclude 'assets/GREEN.png'
-        exclude 'assets/infowindow_bg.9.png'
-        exclude 'assets/RED.png'
-        exclude 'assets/ROSE.png'
-        exclude 'assets/tracelinetexture.png'
-        exclude 'assets/VIOLET.png'
-        exclude 'assets/YELLOW.png'
-        exclude 'assets/zoomin_pressed.png'
-        exclude 'assets/zoomin_selected.png'
-        exclude 'assets/zoomin_unselected.png'
-        exclude 'assets/zoomout_pressed.png'
-        exclude 'assets/zoomout_selected.png'
-        exclude 'assets/zoomout_unselected.png'
-        exclude 'assets/map_assets/style_12_10_1467006104.data'
-        exclude 'assets/map_assets/4001_1444880323.data'*/
-
-
-
-
-
     }
+
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.example.gaodemapdemo.greendao.gen'
+        targetGenDir 'src/main/java'
+    }
+
 }
 
 dependencies {
@@ -113,8 +81,27 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('libs/Volley.jar')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
     compile files('libs/AMap3DMap_5.4.0_AMapNavi_5.4.0_20170929.jar')
+    /*ping++支付导包*/
+    // 必须添加
+    // 使用微信支付时添加,具体版本参考微信官方文档
+    // 使用支付宝时添加
+    // 使用银联支付时添加
+    // 使用QQ钱包时添加
+    // 使用招行一网通时添加
+    compile files('libs/libpingppone-2.1.2.jar')
+    compile files('libs/core-3.3.2-SNAPSHOT.jar')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.pingxx:pingpp-core:2.1.14'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    compile 'com.pingxx:pingpp-alipay:2.1.14'
+    compile 'com.pingxx:pingpp-upacp:2.1.14'
+    compile 'com.pingxx:pingpp-qpay:2.1.14'
+    compile 'com.pingxx:pingpp-cmbwallet:2.1.14'
+    testCompile 'junit:junit:4.12'
+    compile project(':shareonesdk')
+    compile files('libs/org.simalliance.openmobileapi.jar')
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.android.support:percent:22.2.0'
+    compile 'org.greenrobot:greendao:3.2.2' // add library
 }

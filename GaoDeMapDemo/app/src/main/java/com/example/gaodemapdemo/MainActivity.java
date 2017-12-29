@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.amap.api.maps.MapsInitializer;
 import com.example.gaodemapdemo.activity.IndexActivity;
+import com.example.gaodemapdemo.activity.RunActivity;
 import com.example.gaodemapdemo.basic.Animate_CameraActivity;
 import com.example.gaodemapdemo.basic.BasicMapActivity;
 import com.example.gaodemapdemo.basic.CameraActivity;
@@ -70,7 +71,7 @@ import com.example.gaodemapdemo.route.RideRouteActivity;
 import com.example.gaodemapdemo.route.RouteActivity;
 import com.example.gaodemapdemo.route.WalkRouteActivity;
 import com.example.gaodemapdemo.routepoi.RoutePOIActivity;
-import com.example.gaodemapdemo.share.ShareActivity;
+import com.example.gaodemapdemo.activity.ShareActivity;
 import com.example.gaodemapdemo.smooth.SmoothMoveActivity;
 import com.example.gaodemapdemo.tools.CalculateDistanceActivity;
 import com.example.gaodemapdemo.tools.ContainsActivity;
@@ -337,7 +338,7 @@ public final class MainActivity extends ListActivity {
 			//	导航
 			new DemoDetails(R.string.smooth_na_demo, R.string.smooth_na_description, IndexActivity.class),
 			//	导航
-			new DemoDetails(R.string.smooth_run_demo, R.string.smooth_run_description, MainNewActivity.class)
+			new DemoDetails(R.string.smooth_run_demo, R.string.smooth_run_description, RunActivity.class)
 
 
 	};

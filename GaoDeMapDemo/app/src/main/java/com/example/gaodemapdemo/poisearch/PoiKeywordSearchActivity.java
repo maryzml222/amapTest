@@ -42,7 +42,7 @@ import com.example.gaodemapdemo.util.ToastUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import overlay.PoiOverlay;
+import com.example.gaodemapdemo.overlay.PoiOverlay;
 
 /**
  * AMapV1地图中简单介绍poisearch搜索

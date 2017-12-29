@@ -32,7 +32,7 @@ import com.amap.api.services.route.RouteSearch.OnRouteSearchListener;
 import com.amap.api.services.route.WalkRouteResult;
 import com.example.gaodemapdemo.R;
 
-import overlay.DrivingRouteOverlay;
+import com.example.gaodemapdemo.overlay.DrivingRouteOverlay;
 import com.example.gaodemapdemo.util.AMapUtil;
 import com.example.gaodemapdemo.util.ToastUtil;
 /**

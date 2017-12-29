@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.gaodemapdemo.animate.AnimateActivity">
+
+    <com.example.gaodemapdemo.animate.MyView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="帧动画" />
+
+    <ImageView
+        android:id="@+id/frame_iamge"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="补间动画" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnAlphaClick"
+            android:text="alpha"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnTransitionClick"
+            android:text="transition "
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnScaleClick"
+            android:text="scale"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnRoationClick"
+            android:text="roation"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnSetClick"
+            android:text="set"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="属性动画" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnPropertyAlphaClick"
+            android:text="alpha"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnPropertyTransitionClick"
+            android:text="transition "
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnPropertyScaleClick"
+            android:text="scale"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btnPropertyRoationClick"
+            android:text="roation"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:onClick="btnPropertyRoationClick"
+        android:text="roation"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/publishing" />
+
+
+</LinearLayout>

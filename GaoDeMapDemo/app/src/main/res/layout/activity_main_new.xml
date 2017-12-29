@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.gaodemapdemo.MainNewActivity">
+    tools:context="com.example.gaodemapdemo.activity.RunActivity">
 
     <Button
         android:layout_width="wrap_content"

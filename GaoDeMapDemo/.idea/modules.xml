@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GaoDeMapDemo.iml" filepath="$PROJECT_DIR$/GaoDeMapDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareonesdk/shareonesdk.iml" filepath="$PROJECT_DIR$/shareonesdk/shareonesdk.iml" />
     </modules>
   </component>
 </project>
